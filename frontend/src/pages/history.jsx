@@ -35,7 +35,8 @@ export default function History() {
 
     return (
         <div style={{
-            minHeight: '100vh',
+            height: '100vh',
+            overflow: 'auto',
             background: '#0F0F11',
             color: 'white',
             padding: '40px 20px',
