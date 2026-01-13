@@ -233,9 +233,9 @@ function HomeComponent() {
                             justifyContent: 'center'
                         }}>
                              <img 
-                                src="https://images.unsplash.com/photo-1633078654545-5456050d22f7?q=80&w=2670&auto=format&fit=crop" 
-                                alt="Abstract 3D Shape" 
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                src="/namo_logo.svg" 
+                                alt="Namo Brand" 
+                                style={{ width: '80%', height: '80%', objectFit: 'contain' }}
                              />
                         </div>
                     </div>
