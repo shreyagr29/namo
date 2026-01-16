@@ -247,13 +247,63 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .sidebar {
-        display: none; 
+    .meetVideoContainer {
+        flex-direction: column;
     }
+
+    .sidebar {
+        display: flex; /* Force display flex even if previously hidden */
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 10, 10, 0.95);
+        z-index: 200; /* Above everything */
+    }
+
+    .videoGrid {
+        padding-bottom: 90px;
+        margin-right: 0 !important; /* Override inline style */
+        align-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .videoWrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9; /* Maintain aspect ratio */
+        min-height: 200px;
+    }
+
+    .videoWrapper video {
+        object-fit: contain; /* Ensure full video is visible clearly */
+        background: #000;
+    }
+
     .localVideoPiP {
         bottom: 100px;
-        right: 20px;
-        width: 120px;
-        height: 80px;
+        right: 16px;
+        width: 100px;
+        height: 140px; /* Portrait aspect for mobile selfie */
+    }
+    
+    .localVideoPiP video {
+        object-fit: cover;
+    }
+
+    .controlDock {
+        gap: 8px;
+        padding: 8px 16px;
+        width: 90%;
+        justify-content: space-around;
+        bottom: 20px;
+    }
+
+    .dockBtn {
+        width: 40px;
+        height: 40px;
     }
 }

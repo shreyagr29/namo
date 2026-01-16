@@ -58,7 +58,7 @@ export default function VideoMeetComponent() {
 
     let [videos, setVideos] = useState([])
 
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     useEffect(() => {
         if (!askForUsername && localVideoref.current && window.localStream) {
