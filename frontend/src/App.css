@@ -124,8 +124,9 @@ nav {
   nav {
       justify-content: space-between; /* Keep logo and hamburger separated */
       padding: 15px 20px;
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(10px);
+      background: #000000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 200;
   }
 
   .hero-text h1 {
@@ -273,7 +274,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: fixed;
   top: 0;
   width: 100%;
