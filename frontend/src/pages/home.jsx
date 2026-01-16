@@ -22,26 +22,9 @@ function HomeComponent() {
     }
 
     return (
-        <div style={{ 
-            minHeight: '100vh', 
-            background: 'var(--bg-dark)', 
-            backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(10, 132, 255, 0.1) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(48, 209, 88, 0.05) 0%, transparent 20%)',
-            color: 'white',
-            display: 'flex',
-            flexDirection: 'column'
-        }}>
+        <div className="home-container">
             {/* Navigation Bar */}
-            <nav style={{ 
-                display: 'flex', 
-                justifyContent: 'space-between', 
-                alignItems: 'center', 
-                padding: '20px 40px',
-                backdropFilter: 'blur(10px)',
-                position: 'fixed',
-                top: 0,
-                width: '100%',
-                zIndex: 100
-            }}>
+            <nav className="home-nav">
                 <div style={{ display: "flex", alignItems: "center", gap: '10px' }}>
                     <div style={{ 
                         width: '40px', 
@@ -88,28 +71,10 @@ function HomeComponent() {
             </nav>
 
             {/* Main Content */}
-            <div style={{ 
-                flex: 1, 
-                display: 'grid', 
-                gridTemplateColumns: 'minmax(400px, 1fr) 1fr', 
-                gap: '60px', 
-                padding: '120px 8% 40px',
-                alignItems: 'center',
-                maxWidth: '1440px',
-                margin: '0 auto',
-                width: '100%'
-            }}>
+            <div className="home-grid">
                 {/* Left Panel: Join Action */}
                 <div style={{ zIndex: 2 }}>
-                    <h1 style={{ 
-                        fontSize: '3.5rem', 
-                        fontWeight: 800, 
-                        lineHeight: 1.1, 
-                        marginBottom: '20px',
-                        background: 'linear-gradient(135deg, #FFFFFF 0%, #A5A5A5 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                    }}>
+                    <h1 className="home-hero-text">
                         Premium video calls.<br />
                         Now free for everyone.
                     </h1>
@@ -118,7 +83,8 @@ function HomeComponent() {
                         color: 'var(--text-secondary)', 
                         marginBottom: '40px', 
                         lineHeight: 1.6,
-                        maxWidth: '500px'
+                        maxWidth: '500px',
+                        marginInline: 'auto'
                     }}>
                          Connect, collaborate, and celebrate from anywhere with crystal clear high-definition video and audio.
                     </p>
@@ -128,7 +94,8 @@ function HomeComponent() {
                         borderRadius: '24px', 
                         maxWidth: '480px',
                         background: 'rgba(28, 28, 30, 0.6)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)'
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        marginInline: 'auto'
                     }}>
                         <div style={{ display: 'flex', gap: '12px', alignItems: 'stretch' }}>
                             <TextField 
@@ -146,6 +113,7 @@ function HomeComponent() {
                                     style: { color: 'white', height: '56px' }
                                 }}
                                 sx={{
+                                    marginBottom: '0 !important',
                                     '& .MuiOutlinedInput-root': {
                                         borderRadius: '16px',
                                         backgroundColor: 'rgba(0,0,0,0.2)',
@@ -201,6 +169,7 @@ function HomeComponent() {
                         width: '100%',
                         maxWidth: '500px',
                         aspectRatio: '1',
+                        margin: '0 auto'
                     }}>
                         <div style={{
                             position: 'absolute',

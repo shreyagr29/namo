@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../App.css"
 import { Link, useNavigate } from 'react-router-dom'
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { IconButton } from '@mui/material';
 
 export default function LandingPage() {
     const router = useNavigate();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
 
     return (
         <div className='landing-container'>
@@ -11,13 +19,33 @@ export default function LandingPage() {
                 <div className='nav-brand'>
                     Namo
                 </div>
-                <div className='nav-links'>
+                
+                {/* Desktop Menu */}
+                <div className='nav-links desktop-nav'>
                     <div className='nav-item' onClick={() => router("/aljk23")}>Join as Guest</div>
                     <div className='nav-item' onClick={() => router("/auth")}>Register</div>
                     <div className='btn-primary' onClick={() => router("/auth")} role='button'>
                         Login
                     </div>
                 </div>
+
+                {/* Mobile Menu Toggle */}
+                <div className="mobile-menu-icon">
+                    <IconButton onClick={toggleMenu} style={{ color: 'white' }}>
+                        {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                    </IconButton>
+                </div>
+
+                {/* Mobile Menu Dropdown */}
+                {isMenuOpen && (
+                    <div className="mobile-nav-menu glass">
+                        <div className='nav-item' onClick={() => router("/aljk23")}>Join as Guest</div>
+                        <div className='nav-item' onClick={() => router("/auth")}>Register</div>
+                        <div className='btn-primary' onClick={() => router("/auth")} role='button'>
+                            Login
+                        </div>
+                    </div>
+                )}
             </nav>
 
             <div className="landing-content">
